@@ -1,0 +1,28 @@
+<%- include("header");  -%> 
+  <div class="box" id="heading">
+    <h1> <%= listTitle %> </h1>
+  </div>
+    
+  <div class="box">
+    
+<% for(var i=0;i<newlistitems.length;i++){ %>
+  <form action="/delete" method="post">
+   <div class="item"> 
+     <input type="checkbox" name="checkbox" value="<%=newlistitems[i]._id%>" onchange="this.form.submit()"> <!--
+      Note: onchange="this.form.submit()  ---it is written sothat the checkbox could work like a button.
+      The main job of a button with type equal to submit is that whenever it will get pressed it will submit all the data inside the form and make the post request to the required route.
+     -->
+    <p> <%= newlistitems[i].name %> </p>
+  </div>
+</form>
+<%}%>
+
+
+
+<form class="item" action="/" method="post">
+  <input type="text" name="newitem" placeholder="New Item" autocomplete="off">
+  <button type="submit" name="btn" value="<%=listTitle%>">+</button>
+</form>
+  
+
+<%- include("footer"); -%> <!--You can take the reference from ejs.co website in template section-->
