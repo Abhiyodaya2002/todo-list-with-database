@@ -8,7 +8,8 @@
 <% for(var i=0;i<newlistitems.length;i++){ %>
   <form action="/delete" method="post">
    <div class="item"> 
-     <input type="checkbox" name="checkbox" value="<%=newlistitems[i]._id%>" onchange="this.form.submit()"> <!--
+     <input type="checkbox" name="checkbox" value="<%=newlistitems[i]._id%>" onchange="this.form.submit()"> 
+     <!--
       Note: onchange="this.form.submit()  ---it is written sothat the checkbox could work like a button.
       The main job of a button with type equal to submit is that whenever it will get pressed it will submit all the data inside the form and make the post request to the required route.
      -->

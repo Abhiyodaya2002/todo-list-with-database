@@ -92,8 +92,6 @@ app.get("/work",function(req,res)
 })
 app.post("/work",function(req,res)
 {
-
-  
   let it=rq.body.newitem;
   workitems.push(it);
   res.redirect("/work");
